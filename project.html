@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><b>FITNESS TRACKER</b></title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Custom CSS */
+    /* Add your custom CSS styles here */
+    body{
+        background-color: #f5e2e2;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="https://www.garmin.co.in/products/wearables/?cat=activity_tracking"><b> FITNESS TRACKER</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://muffingroup.com/blog/"><b> HOME </b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://muffingroup.com/blog/category/web-design/"><b> WEB DESIGN</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://muffingroup.com/blog/about-us/"><b> about us </b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://muffingroup.com/advice/reviews/"><b> reviews</b></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Welcome to Fitness Tracker</h2>
+        <p>Track your fitness progress, set goals, and achieve them with our easy-to-use fitness tracker.</p>
+        <a href="#" class="btn btn-primary">Get Started</a>
+      </div>
+      <div class="col-md-6">
+        <!-- Add an image or illustration here -->
+        <img src="https://img.freepik.com/free-photo/young-happy-sportswoman-getting-ready-workout-tying-shoelace-fitness-center_637285-470.jpg" class="img-fluid" alt="Fitness Tracker Image">
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="container mt-5">
+    <h2>Weekly Progress</h2>
+    <canvas id="weeklyProgressChart"></canvas>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Chart.js
+    var ctx = document.getElementById('weeklyProgressChart').getContext('2d');
+    var weeklyProgressChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+          label: 'Distance Covered (km)',
+          data: [10, 12, 15, 14, 13, 16, 18],
+          borderColor: 'rgb(255, 99, 132)',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true
+            }
+          }]
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        Log Your Workout
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <label for="workoutType">Workout Type</label>
+            <select class="form-control" id="workoutType">
+              <option>Running</option>
+              <option>Cycling</option>
+              <option>Weightlifting</option>
+              <!-- Add more workout types as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="duration">Duration (minutes)</label>
+            <input type="number" class="form-control" id="duration" placeholder="Enter duration">
+          </div>
+          <div class="form-group">
+            <label for="distance">Distance (km/miles)</label>
+            <input type="number" class="form-control" id="distance" placeholder="Enter distance">
+          </div>
+          <button type="submit" class="btn btn-primary">Log out</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
